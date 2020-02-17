@@ -1,0 +1,32 @@
+server:
+    port: 9527
+
+spring:
+  application:
+    name:  framework-zuul
+
+eureka:
+    instance:
+      instance-id: gateway-9527.com      # 注册到eureka的名称
+      prefer-ip-address: true
+    client:
+        service-url:
+            defaultZone: http://eureka7001.com:7001/eureka/    # 单机版 设置Eureka Server交互地址查询服务与注册服务
+            #defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+
+zuul:
+  routes:
+    myuser.serviceId: framework-user
+    myuser.path: /myuser/**
+  #ignored-services: framework-user       # 不允许使用真实的微服务名访问   单个
+  ignored-services: "*"               # 不允许使用真实的微服务名访问   全部
+  prefix: /xdx                          # 设置同一访问前缀
+
+# http://myzuul.com:9527/xdx/myuser/user/getById/1
+
+# 配置info信息
+info:
+  app.name: framework-zuul
+  company.name: www.xdx97.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$

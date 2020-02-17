@@ -1,0 +1,39 @@
+server:
+  port: 8001
+
+mybatis:
+  type-aliases-package: com.xdx97.framework.entitys         # 所有Entity别名类所在包
+  mapper-locations: classpath*:mappers/**/*Mapper.xml   # mapper映射文件 - classpath:mybatis/mapper/**/*.xml
+
+
+spring:
+    application:
+      name: framework-user
+    datasource:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/xdx_cloud?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false
+      username: root
+      password: 123456
+      dbcp2:
+        min-idle: 5                                # 数据库连接池最小维持连接数
+        initial-size: 5                           # 初始连接数
+        max-total: 5                               # 最大连接数
+        max-wait-millis: 200                  # 等待链接获取的最大超时时间
+
+# 将服务注册进eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka    # 设置Eureka Server交互地址查询服务与注册服务
+  instance:
+    instance-id: framework-user8001     # 修改注册到eureka服务的名称
+    prefer-ip-address: true           # 访问路径可以显示ip
+
+
+# 配置info信息
+info:
+  app.name: framework-user
+  company.name: www.xdx97.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
