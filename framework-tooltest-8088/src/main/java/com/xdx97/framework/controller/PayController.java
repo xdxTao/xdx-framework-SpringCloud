@@ -4,7 +4,7 @@ package com.xdx97.framework.controller;
 
 import com.alipay.api.AlipayApiException;
 import com.xdx97.framework.service.PayService;
-import com.xdx97.framework.utils.pay.AlipayBean;
+import com.xdx97.framework.entitys.pay.AlipayBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -39,4 +39,5 @@ public class PayController {
         alipayBean.setBody(body);
         return payService.aliPay(alipayBean);
     }
+
 }

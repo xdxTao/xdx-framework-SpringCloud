@@ -2,7 +2,7 @@ package com.xdx97.framework.service;
 
 
 import com.alipay.api.AlipayApiException;
-import com.xdx97.framework.utils.pay.AlipayBean;
+import com.xdx97.framework.entitys.pay.AlipayBean;
 
 
 /**

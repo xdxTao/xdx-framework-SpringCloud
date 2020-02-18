@@ -1,6 +1,9 @@
 package com.xdx97.framework.utils.pay;
 
 
+import com.xdx97.framework.config.AlipayConfig;
+import com.xdx97.framework.entitys.pay.AlipayBean;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.alibaba.fastjson.JSON;
@@ -11,11 +14,14 @@ import com.alipay.api.request.AlipayTradePagePayRequest;
 
 /**
  * 支付宝支付接口
- * @author Louis
- * @date Dec 12, 2018
+ * @author 小道仙
+ * @date 2020年2月18日
  */
 @Component
 public class Alipay {
+
+    @Autowired
+    private AlipayConfig alipayConfig;
 
     /**
      * 支付接口
@@ -25,15 +31,15 @@ public class Alipay {
      */
     public String pay(AlipayBean alipayBean) throws AlipayApiException {
         // 1、获得初始化的AlipayClient
-        String serverUrl = AlipayProperties.getGatewayUrl();
-        String appId = AlipayProperties.getAppId();
-        String privateKey = AlipayProperties.getPrivateKey();
+        String serverUrl = alipayConfig.getGatewayUrl();
+        String appId = alipayConfig.getAppId();
+        String privateKey = alipayConfig.getPrivateKey();
         String format = "json";
-        String charset = AlipayProperties.getCharset();
-        String alipayPublicKey = AlipayProperties.getPublicKey();
-        String signType = AlipayProperties.getSignType();
-        String returnUrl = AlipayProperties.getReturnUrl();
-        String notifyUrl = AlipayProperties.getNotifyUrl();
+        String charset = alipayConfig.getCharset();
+        String alipayPublicKey = alipayConfig.getPublicKey();
+        String signType = alipayConfig.getSignType();
+        String returnUrl = alipayConfig.getReturnUrl();
+        String notifyUrl = alipayConfig.getNotifyUrl();
         AlipayClient alipayClient = new DefaultAlipayClient(serverUrl, appId, privateKey, format, charset, alipayPublicKey, signType);
         // 2、设置请求参数
         AlipayTradePagePayRequest alipayRequest = new AlipayTradePagePayRequest();

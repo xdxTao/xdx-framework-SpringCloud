@@ -1,11 +1,11 @@
-package com.xdx97.framework.utils.pay;
+package com.xdx97.framework.entitys.pay;
 
 
 /**
  * 支付实体对象
  * 根据支付宝接口协议，其中的属性名，必须使用下划线，不能修改
- * @author Louis
- * @date Dec 12, 2018
+ * @author 小道仙
+ * @date 2020年2月18日
  */
 public class AlipayBean {
 

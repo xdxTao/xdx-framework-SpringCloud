@@ -75,7 +75,6 @@ public class AjaxResult<T> {
 
     /**
      * 操作成功
-     * @param msg  返回消息
      * @param total 总条数
      * @param data 返回的数据
      *
@@ -86,7 +85,8 @@ public class AjaxResult<T> {
         AjaxResult<T> result = new AjaxResult<>();
         result.setSuccess(true)
                 .setTotal(total)
-                .setMsg("操作成功");
+                .setMsg("操作成功")
+                .setData(data);
         return result;
     }
 

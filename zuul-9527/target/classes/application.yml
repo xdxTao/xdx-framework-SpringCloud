@@ -18,6 +18,8 @@ zuul:
   routes:
     myuser.serviceId: framework-user
     myuser.path: /myuser/**
+    mytools.serviceId: framework-tools
+    mytools.path: /mytools/**
   #ignored-services: framework-user       # 不允许使用真实的微服务名访问   单个
   ignored-services: "*"               # 不允许使用真实的微服务名访问   全部
   prefix: /xdx                          # 设置同一访问前缀

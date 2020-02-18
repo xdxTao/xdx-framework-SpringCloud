@@ -3,7 +3,7 @@ package com.xdx97.framework.service.impl;
 
 import com.xdx97.framework.service.PayService;
 import com.xdx97.framework.utils.pay.Alipay;
-import com.xdx97.framework.utils.pay.AlipayBean;
+import com.xdx97.framework.entitys.pay.AlipayBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

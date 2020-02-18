@@ -18,5 +18,5 @@
 |SpringBoot|boot|2.0.0.RELEASE|
 |SpringCloud|cloud|Finchley.SR1|
 |MyBatis||2.0.1|
-|<MyBatisPlus||3.0.2|
-|<lombok||1.18.2|
+|MyBatisPlus||3.0.2|
+|lombok||1.18.2|
