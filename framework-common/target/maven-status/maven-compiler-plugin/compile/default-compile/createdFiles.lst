@@ -1,3 +1,9 @@
-com\xdx97\framework\common\AjaxResult.class
-com\xdx97\framework\entitys\User.class
+com\xdx97\framework\handler\BaseEnumTypeHandler.class
+com\xdx97\framework\enums\IBaseEnum.class
+com\xdx97\framework\enums\YesOrNoStatusEnum.class
 com\xdx97\framework\utils\UUIDUtils.class
+com\xdx97\framework\common\AjaxResult.class
+com\xdx97\framework\entitys\pojo\authority\Menu.class
+com\xdx97\framework\entitys\pojo\user\User.class
+com\xdx97\framework\entitys\pojo\authority\Role.class
+com\xdx97\framework\entitys\pojo\authority\Authority.class

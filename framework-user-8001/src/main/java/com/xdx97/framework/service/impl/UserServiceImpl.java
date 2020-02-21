@@ -2,7 +2,7 @@ package com.xdx97.framework.service.impl;
 
 
 import com.xdx97.framework.common.AjaxResult;
-import com.xdx97.framework.entitys.User;
+import com.xdx97.framework.entitys.pojo.user.User;
 import com.xdx97.framework.mapper.UserMapper;
 import com.xdx97.framework.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

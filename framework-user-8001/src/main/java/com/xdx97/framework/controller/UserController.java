@@ -2,7 +2,7 @@ package com.xdx97.framework.controller;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.xdx97.framework.common.AjaxResult;
-import com.xdx97.framework.entitys.User;
+import com.xdx97.framework.entitys.pojo.user.User;
 import com.xdx97.framework.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

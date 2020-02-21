@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xdx97.framework.mapper.authority.RoleMapper">
+    <resultMap id="BaseResultMap" type="com.xdx97.framework.entitys.pojo.authority.Role">
+        <id column="role_id" jdbcType="CHAR" property="roleId" />
+        <result column="role_name" jdbcType="VARCHAR" property="roleName" />
+        <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+        <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+        <result column="user_create" jdbcType="CHAR" property="userCreate" />
+        <result column="user_modified" jdbcType="CHAR" property="userModified" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        role_id,
+        role_name,
+        gmt_create,
+        gmt_modified,
+        user_create,
+        user_modified
+    </sql>
+</mapper>

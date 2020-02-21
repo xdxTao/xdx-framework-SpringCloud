@@ -1,4 +1,4 @@
-package com.xdx97.framework.entitys;
+package com.xdx97.framework.entitys.pojo.user;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.fasterxml.jackson.annotation.JsonFormat;

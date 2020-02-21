@@ -1,7 +1,7 @@
 package com.xdx97.framework.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.xdx97.framework.entitys.User;
+import com.xdx97.framework.entitys.pojo.user.User;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

@@ -4,6 +4,12 @@ server:
 mybatis:
   type-aliases-package: com.xdx97.framework.entitys         # 所有Entity别名类所在包
   mapper-locations: classpath*:mappers/**/*Mapper.xml   # mapper映射文件 - classpath:mybatis/mapper/**/*.xml
+  base-package: com.xdx97.framework.mapper
+
+mybatis-plus:
+  mapper-locations: classpath*:mappers/**/*Mapper.xml
+  type-handlers-package: com.xdx97.framework.handler          # 处理器配置
+
 
 
 spring:

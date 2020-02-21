@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xdx97.framework.mapper.authority.MenuMapper">
+    <resultMap id="baseMap" type="com.xdx97.framework.entitys.pojo.authority.Menu">
+        <id column="menu_id" jdbcType="CHAR" property="menuId" />
+        <result column="sup_menu_id" jdbcType="CHAR" property="supMenuId" />
+        <result column="menu_name" jdbcType="VARCHAR" property="menuName" />
+        <result column="menu_addr" jdbcType="VARCHAR" property="menuAddr" />
+        <result column="menu_sts" jdbcType="TINYINT" property="menuSts" />
+        <result column="menu_sort" jdbcType="TINYINT" property="menuSort" />
+        <result column="menu_img" jdbcType="VARCHAR" property="menuImg" />
+        <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+        <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+        <result column="user_create" jdbcType="CHAR" property="userCreate" />
+        <result column="user_modified" jdbcType="CHAR" property="userModified" />
+    </resultMap>
+
+    <sql id="base_column_list">
+        ${base}.menu_id,
+        ${base}.sup_menu_id,
+        ${base}.menu_name,
+        ${base}.menu_addr,
+        ${base}.menu_sts,
+        ${base}.menu_img,
+        ${base}.menu_sort,
+        ${base}.gmt_create,
+        ${base}.gmt_modified,
+        ${base}.user_create,
+        ${base}.user_modified
+    </sql>
+
+    <select id="getOneMenu" resultMap="baseMap">
+        SELECT
+        <include refid="base_column_list">
+            <property name="base" value="menu" />
+        </include>
+        FROM
+        menu
+        WHERE
+       (
+            sup_menu_id IS NULL
+            OR sup_menu_id = ''
+        )
+        <if test="flag == 2">
+            AND  menu_sts = 1
+            AND menu_id != '/'
+        </if>
+        ORDER BY menu_sort ASC
+    </select>
+
+
+</mapper>

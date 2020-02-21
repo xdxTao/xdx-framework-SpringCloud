@@ -1,7 +1,7 @@
 package com.xdx97.framework.service;
 
 import com.xdx97.framework.common.AjaxResult;
-import com.xdx97.framework.entitys.User;
+import com.xdx97.framework.entitys.pojo.user.User;
 
 import java.util.List;
 
