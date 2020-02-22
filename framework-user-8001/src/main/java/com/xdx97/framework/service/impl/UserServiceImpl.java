@@ -20,7 +20,7 @@ public class UserServiceImpl implements UserService {
     public AjaxResult<List<User>> selectList() {
 
         List<User> xUsers = userMapper.selectList(null);
-        return AjaxResult.success(xUsers.size() ,xUsers);
+        return AjaxResult.success(xUsers);
     }
 
     @Override

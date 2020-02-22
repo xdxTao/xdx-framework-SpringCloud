@@ -15,7 +15,24 @@ public interface MenuMapper extends BaseMapper<Menu> {
      *
      * flag = 1 表示菜单栏
      * flag = 2 表示实际菜单
+     * @param flag
      * @return
      */
     List<Menu> getOneMenu(@Param("flag") Integer flag);
+
+    /**
+     * 获取全部的权限菜单
+     *
+     * @param supMenuId
+     * @return
+     */
+    List<String> getByIdName(@Param("supMenuId") String supMenuId);
+
+    /**
+     * 根据ID获取菜单名称
+     *
+     * @param lists
+     * @return
+     */
+    List<String> selectNameById(List<String> lists);
 }

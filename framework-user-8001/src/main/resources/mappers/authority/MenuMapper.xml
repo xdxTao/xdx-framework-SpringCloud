@@ -48,5 +48,15 @@
         ORDER BY menu_sort ASC
     </select>
 
+    <select id="getByIdName" resultType="String">
+        SELECT menu_name FROM menu WHERE sup_menu_id = #{supMenuId}
+    </select>
 
+    <select id="selectNameById"  parameterType="java.util.List" resultType="String">
+        SELECT menu_name FROM menu WHERE menu_id in
+        <foreach item="roleId" index="index" collection="list"
+                 open="(" separator="," close=")">
+            #{roleId}
+        </foreach>
+    </select>
 </mapper>

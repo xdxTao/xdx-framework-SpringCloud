@@ -1,7 +1,10 @@
 package com.xdx97.framework.controller;
 
 import com.xdx97.framework.common.AjaxResult;
+import com.xdx97.framework.entitys.dto.authority.AuthorityDto;
+import com.xdx97.framework.entitys.dto.authority.AuthorityResult;
 import com.xdx97.framework.entitys.pojo.authority.Menu;
+import com.xdx97.framework.entitys.pojo.authority.Role;
 import com.xdx97.framework.service.impl.AuthorityServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -57,7 +60,68 @@ public class AuthorityController {
 
     /******************************  角色  ******************************/
 
+    /**
+     * 添加角色
+     *
+     */
+    @PostMapping("/authority/role/add")
+    public AjaxResult<?> roleAdd(@RequestBody Role role){
 
+        return authorityService.roleAdd(role);
+    }
+
+    /**
+     * 角色列表
+     *
+     */
+    @GetMapping("/authority/role/list")
+    public AjaxResult<List<Role>> roleList(){
+
+        return authorityService.roleList();
+    }
+
+    /**
+     * 角色更新
+     *
+     */
+    @PostMapping("/authority/role/update")
+    public AjaxResult<?> roleUpdate(@RequestBody Role role){
+
+        return authorityService.roleUpdate(role);
+    }
 
     /******************************  权限  ******************************/
+
+    /**
+     * 权限列表
+     *
+     * @return
+     */
+    @GetMapping("/authority/list")
+    public AjaxResult<List<AuthorityDto>> authorityList(){
+
+        return authorityService.authorityList();
+    }
+
+    /**
+     * 权限保存
+     *
+     * @return
+     */
+    @PostMapping("/authority/save")
+    public AjaxResult<?> authoritySave(@RequestBody AuthorityResult authorityResult){
+
+        return authorityService.authoritySave(authorityResult);
+    }
+
+    /**
+     * 获取当前角色的权限
+     *
+     * @return
+     */
+    @GetMapping("/authority/listbyroleId")
+    public AjaxResult<List<String>> listbyroleId(@RequestParam String roleId){
+
+        return authorityService.listbyroleId(roleId);
+    }
 }

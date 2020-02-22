@@ -81,10 +81,25 @@ public class AjaxResult<T> {
      * @author 小道仙
      * @date 2020年2月17日
      */
-    public static <T> AjaxResult<T> success(Integer total,T data){
+    public static <T> AjaxResult<T> success(T data,Integer total){
         AjaxResult<T> result = new AjaxResult<>();
         result.setSuccess(true)
                 .setTotal(total)
+                .setMsg("操作成功")
+                .setData(data);
+        return result;
+    }
+
+    /**
+     * 操作成功
+     * @param data 返回的数据
+     *
+     * @author 小道仙
+     * @date 2020年2月22日
+     */
+    public static <T> AjaxResult<T> success(T data){
+        AjaxResult<T> result = new AjaxResult<>();
+        result.setSuccess(true)
                 .setMsg("操作成功")
                 .setData(data);
         return result;

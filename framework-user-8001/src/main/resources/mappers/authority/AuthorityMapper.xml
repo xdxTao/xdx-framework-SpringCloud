@@ -5,4 +5,11 @@
         <result column="role_id" jdbcType="CHAR" property="roleId" />
         <result column="menu_id" jdbcType="CHAR" property="menuId" />
     </resultMap>
+
+
+
+
+    <select id="listbyroleId" resultType="String">
+        SELECT menu_id FROM authority WHERE role_id = #{roleId}
+    </select>
 </mapper>
