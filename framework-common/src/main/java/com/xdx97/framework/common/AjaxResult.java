@@ -42,6 +42,11 @@ public class AjaxResult<T> {
      */
     private String errDesc;
 
+    /**
+     * 用户token
+     */
+    private String xdxToken;
+
     public AjaxResult() {
     }
 

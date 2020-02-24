@@ -9,6 +9,7 @@ com\xdx97\framework\entitys\pojo\authority\Menu.class
 com\xdx97\framework\entitys\dto\authority\AuthorityDto.class
 com\xdx97\framework\entitys\pojo\user\User.class
 com\xdx97\framework\utils\primarykeysnowflake\PrimaryKeySnowflakeGenerator.class
+com\xdx97\framework\utils\PropertiesUtils.class
 com\xdx97\framework\utils\primarykeysnowflake\SnowflakeIdWorker.class
 com\xdx97\framework\enums\IBaseEnum.class
 com\xdx97\framework\utils\primarykeysnowflake\SnowflakeIdWorker$1.class

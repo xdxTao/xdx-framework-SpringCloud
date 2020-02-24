@@ -11,6 +11,7 @@ mybatis-plus:
   type-handlers-package: com.xdx97.framework.handler          # 处理器配置
 
 
+# 关闭Security 自动验证
 
 spring:
     application:
@@ -43,3 +44,8 @@ info:
   company.name: www.xdx97.com
   build.artifactId: $project.artifactId$
   build.version: $project.version$
+
+
+
+xdxToken: 38djsd23u4098edhsaid2348
+

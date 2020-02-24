@@ -35,6 +35,12 @@ public class UserController {
         return user;
     }
 
+    @GetMapping("/user/login")
+    public AjaxResult<?> login(@RequestParam String userName, @RequestParam String userPassword){
+        User user = new User();
+        user.setUserName(userName).setUserPassword(userPassword);
+        return userServiceImpl.login(user);
+    }
 
     public User processHystrix_Get(@PathVariable("id") String id) {
         System.out.println("进入异常了~~~~");

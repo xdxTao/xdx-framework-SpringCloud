@@ -10,4 +10,6 @@ public interface UserService {
     AjaxResult<List<User>> selectList();
 
     User getById(String id);
+
+    AjaxResult<?> login(User user);
 }
