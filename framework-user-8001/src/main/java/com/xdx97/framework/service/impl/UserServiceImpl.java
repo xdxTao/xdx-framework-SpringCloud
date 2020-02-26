@@ -5,6 +5,9 @@ import com.xdx97.framework.common.AjaxResult;
 import com.xdx97.framework.entitys.pojo.user.User;
 import com.xdx97.framework.mapper.UserMapper;
 import com.xdx97.framework.service.UserService;
+import com.xdx97.framework.utils.UUIDUtils;
+import com.xdx97.framework.utils.redis.RedisUtils;
+import jdk.nashorn.internal.parser.Token;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
@@ -20,7 +23,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public AjaxResult<List<User>> selectList() {
 
-        List<User> xUsers = userMapper.selectList(null);
+        List<User> xUsers = userMapper.selectList(new User());
         return AjaxResult.success(xUsers);
     }
 
@@ -31,24 +34,19 @@ public class UserServiceImpl implements UserService {
         return user;
     }
 
-    @Autowired
-    private Environment env;
-
     @Override
     public AjaxResult<?> login(User user) {
         AjaxResult ajaxResult = new AjaxResult();
-        /**
-         * 1、获取到了用户名和密码去进行判断是否正确
-         * 2、如果验证不成功，这里我默认用户名密码必须等于 admin admin
-         */
-        if (! ("admin".equals(user.getUserName()) && "admin".equals(user.getUserPassword()))){
-            ajaxResult.setCode(222).setErrDesc("用户名或密码错误!");
+        User userTmp = userMapper.selectOne(new User().setUserName(user.getUserName()));
+        if (userTmp == null || !userTmp.getUserPassword().equals(user.getUserPassword())){
+            ajaxResult.setCode(222).setErrDesc("用户名或密码错误!").setSuccess(false);
             return ajaxResult;
         }
-
-        // 3、如果验证成功了，就返回 token，当然了我们现需要把token存入Redis这里就省略了
-        ajaxResult.setCode(200).setMsg("登录成功!").setXdxToken(env.getProperty("xdxToken"));
-
+        String  xdxToken = UUIDUtils.getUUID();
+        // 3、如果验证成功了，就返回 token
+        userTmp.setOpenid(xdxToken);
+        ajaxResult.setCode(200).setMsg("登录成功!").setXdxToken(xdxToken).setData(userTmp).setSuccess(true);
+        RedisUtils.set(xdxToken,userTmp,30L);
         return ajaxResult;
     }
 }

@@ -2,8 +2,22 @@ server:
     port: 9527
 
 spring:
-  application:
-    name:  framework-zuul
+    application:
+        name:  framework-zuul
+    # redis配置
+    redis:
+        database: 1
+        host: 47.100.60.252
+        port: 8379
+        password: fdE#84K$EW~
+        timeout: 3000
+        jedis:
+            pool:
+                max-active: 8
+                max-idle: 8
+                max-wait: -1
+                min-idle: 0
+
 
 eureka:
     instance:
@@ -32,6 +46,3 @@ info:
   company.name: www.xdx97.com
   build.artifactId: $project.artifactId$
   build.version: $project.version$
-
-
-xdxToken: 38djsd23u4098edhsaid2348

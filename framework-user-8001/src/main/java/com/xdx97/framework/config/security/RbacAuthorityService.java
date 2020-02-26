@@ -1,5 +1,6 @@
 package com.xdx97.framework.config.security;
 
+import com.xdx97.framework.utils.redis.RedisUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.security.core.Authentication;
@@ -28,8 +29,8 @@ public class RbacAuthorityService {
         }
 
         // 登录判断
-        String token = request.getHeader("xdxToken");
-        if (token == null || !token.equals(env.getProperty("xdxToken"))){
+        String token = request.getHeader("X-Token");
+        if (token == null || RedisUtils.get(token) == null){
             request.setAttribute("flagName","未登录");
             return false;
         }

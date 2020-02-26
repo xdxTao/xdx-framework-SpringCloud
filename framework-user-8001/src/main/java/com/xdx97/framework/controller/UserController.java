@@ -17,17 +17,9 @@ public class UserController {
     @Autowired
     private UserServiceImpl userServiceImpl;
 
-    @Value("${spring.redis.host}")
-    private String xdxToken;
-
 
     @GetMapping("/user/list")
     public AjaxResult<List<User>> list(){
-
-
-        RedisUtils.set("xdxToken","3112312312");
-        System.out.println(RedisUtils.get("xdxToken"));
-
 
         return userServiceImpl.selectList();
     }
