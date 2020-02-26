@@ -20,6 +20,8 @@ public class RbacAuthorityService {
         // 获取当前请求的URI
         String requestURI = request.getRequestURI();
 
+        System.out.println("requestURI 2 ; " + requestURI);
+
         // 放开登录url
         if (requestURI.equals("/user/login")){
             return true;
@@ -36,9 +38,11 @@ public class RbacAuthorityService {
         // 利用token去Redis取出当前角色的权限,这里就直接写死了
         List<String> roles = new ArrayList<>();
         roles.add("/user/list");
-        roles.add("/user/menu");
+        roles.add("/authority/menu/list");
         roles.add("/user/loginOut");
-
+        roles.add("/authority/role/list");
+        roles.add("/authority/list");
+        roles.add("/authority/listbyroleId");
         if (!roles.contains(requestURI)){
             request.setAttribute("flagName","权限不足");
             return false;

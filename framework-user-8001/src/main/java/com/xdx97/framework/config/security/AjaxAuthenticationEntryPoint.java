@@ -20,15 +20,15 @@ public class AjaxAuthenticationEntryPoint implements AuthenticationEntryPoint {
     @Override
     public void commence(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AuthenticationException e) throws IOException, ServletException {
 
-        AjaxResult ajaxResult = new AjaxResult();
+        AjaxResult ajaxResult = new AjaxResult().setSuccess(false);
 
         String flagName = httpServletRequest.getAttribute("flagName").toString();
 
         if (flagName.equals("未登录")){
-            ajaxResult.setCode(888)
+            ajaxResult.setCode(401)
                     .setErrDesc("未登录，请登录!");
         } else if (flagName.equals("权限不足")){
-            ajaxResult.setCode(999)
+            ajaxResult.setCode(403)
                     .setErrDesc("权限不足!");
         } else{
             ajaxResult.setCode(000)

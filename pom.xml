@@ -32,7 +32,8 @@
         <jackson.version>2.10.1</jackson.version>
         <fastjson.version>1.2.48</fastjson.version>
         <security.version>2.0.0.RELEASE</security.version>
-        <jwt.version>0.9.0</jwt.version>
+        <dataRedis.version>2.2.0.RELEASE</dataRedis.version>
+        <jedis.version>2.9.0</jedis.version>
     </properties>
 
     <dependencyManagement>
@@ -123,11 +124,16 @@
                 <artifactId>spring-boot-starter-security</artifactId>
                 <version>${security.version}</version>
             </dependency>
-            <!--JWT-->
+            <!-- redis -->
             <dependency>
-                <groupId>io.jsonwebtoken</groupId>
-                <artifactId>jjwt</artifactId>
-                <version>${jwt.version}</version>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-redis</artifactId>
+                <version>${dataRedis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>${jedis.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

@@ -32,3 +32,6 @@ info:
   company.name: www.xdx97.com
   build.artifactId: $project.artifactId$
   build.version: $project.version$
+
+
+xdxToken: 38djsd23u4098edhsaid2348

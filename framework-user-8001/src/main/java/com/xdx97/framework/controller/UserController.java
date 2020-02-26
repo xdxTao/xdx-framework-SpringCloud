@@ -4,7 +4,9 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.xdx97.framework.common.AjaxResult;
 import com.xdx97.framework.entitys.pojo.user.User;
 import com.xdx97.framework.service.impl.UserServiceImpl;
+import com.xdx97.framework.utils.redis.RedisUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,8 +17,18 @@ public class UserController {
     @Autowired
     private UserServiceImpl userServiceImpl;
 
+    @Value("${spring.redis.host}")
+    private String xdxToken;
+
+
     @GetMapping("/user/list")
     public AjaxResult<List<User>> list(){
+
+
+        RedisUtils.set("xdxToken","3112312312");
+        System.out.println(RedisUtils.get("xdxToken"));
+
+
         return userServiceImpl.selectList();
     }
 
