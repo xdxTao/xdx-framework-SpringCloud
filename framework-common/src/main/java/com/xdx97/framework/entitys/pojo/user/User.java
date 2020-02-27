@@ -1,7 +1,9 @@
 package com.xdx97.framework.entitys.pojo.user;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.xdx97.framework.enums.YesOrNoStatusEnum;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -50,7 +52,7 @@ public class User implements Serializable {
     /**
      * 用户状态:1启用0停用
      */
-    private Byte userStatus;
+    private YesOrNoStatusEnum userStatus;
 
     /**
      * 头像路径
@@ -78,6 +80,10 @@ public class User implements Serializable {
      * 修改人
      */
     private String userModified;
+
+    /** 角色名 */
+    @TableField(exist = false)
+    private String roleName;
 
     private static final long serialVersionUID = 1L;
 }

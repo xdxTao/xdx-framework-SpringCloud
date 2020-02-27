@@ -13,6 +13,7 @@ com\xdx97\framework\entitys\pojo\authority\Role.class
 com\xdx97\framework\utils\primarykeysnowflake\SnowflakeIdWorker$LazyHolder.class
 com\xdx97\framework\handler\BaseEnumTypeHandler.class
 com\xdx97\framework\utils\primarykeysnowflake\BasePrimaryKeyGenerator.class
+com\xdx97\framework\common\MyCommonService.class
 com\xdx97\framework\enums\YesOrNoStatusEnum.class
 com\xdx97\framework\utils\SpringContextUtils.class
 com\xdx97\framework\entitys\dto\authority\AuthorityDto.class

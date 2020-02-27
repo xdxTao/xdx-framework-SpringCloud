@@ -41,10 +41,6 @@
             sup_menu_id IS NULL
             OR sup_menu_id = ''
         )
-        <if test="flag == 2">
-            AND  menu_sts = 1
-            AND menu_id != '/'
-        </if>
         ORDER BY menu_sort ASC
     </select>
 
@@ -58,5 +54,20 @@
                  open="(" separator="," close=")">
             #{roleId}
         </foreach>
+    </select>
+
+    <!-- 把已知菜单排序 -->
+    <select id="getSortMenu" parameterType="java.util.Set" resultMap="baseMap">
+        SELECT
+            <include refid="base_column_list">
+                <property name="base" value="menu" />
+            </include>
+        FROM menu WHERE menu_id in
+        <foreach item="menuId" index="index" collection="set"
+                 open="(" separator="," close=")">
+            #{menuId}
+        </foreach>
+        AND menu.menu_sts = 1
+        ORDER BY menu_sort ASC
     </select>
 </mapper>

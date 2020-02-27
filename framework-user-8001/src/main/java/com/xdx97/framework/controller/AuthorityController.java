@@ -39,13 +39,23 @@ public class AuthorityController {
     }
 
     /**
+     * 菜单管理列表
+     *
+     * @param flag 查询的类型
+     */
+    @GetMapping("/authority/menuMgmt/list")
+    public AjaxResult<List<Menu>> meanMgmtList(){
+        return authorityService.meanMgmtList();
+    }
+
+    /**
      * 菜单列表
      *
      * @param flag 查询的类型
      */
     @GetMapping("/authority/menu/list")
-    public AjaxResult<List<Menu>> meanList(@RequestParam Integer flag){
-        return authorityService.meanList(flag);
+    public AjaxResult<List<Menu>> menuList(){
+        return authorityService.menuList();
     }
 
     /**
@@ -119,9 +129,9 @@ public class AuthorityController {
      *
      * @return
      */
-    @GetMapping("/authority/listbyroleId")
-    public AjaxResult<List<String>> listbyroleId(@RequestParam String roleId){
+    @GetMapping("/authority/listByRoleId")
+    public AjaxResult<List<String>> listByRoleId(@RequestParam String roleId){
 
-        return authorityService.listbyroleId(roleId);
+        return authorityService.listByRoleId(roleId);
     }
 }

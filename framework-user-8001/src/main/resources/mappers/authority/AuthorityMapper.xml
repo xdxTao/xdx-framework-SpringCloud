@@ -9,7 +9,7 @@
 
 
 
-    <select id="listbyroleId" resultType="String">
+    <select id="listByRoleId" resultType="String">
         SELECT menu_id FROM authority WHERE role_id = #{roleId}
     </select>
 </mapper>

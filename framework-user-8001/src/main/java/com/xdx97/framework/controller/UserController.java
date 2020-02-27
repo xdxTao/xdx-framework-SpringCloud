@@ -11,6 +11,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * 用户相关的操作
+ *
+ * @author 小道仙
+ * @date 2020年2月27日
+ */
 @RestController
 public class UserController {
 
@@ -44,6 +50,18 @@ public class UserController {
         User user = new User();
         user.setUserName(userName).setUserPassword(userPassword);
         return userServiceImpl.login(user);
+    }
+
+    @PostMapping("/user/save")
+    public AjaxResult<?> userSave(@RequestBody User user){
+
+        return userServiceImpl.userSave(user);
+    }
+
+    @PostMapping("/user/update")
+    public AjaxResult<?> userUpdate(@RequestBody User user){
+
+        return userServiceImpl.userUpdate(user);
     }
 
     public User processHystrix_Get(@PathVariable("id") String id) {

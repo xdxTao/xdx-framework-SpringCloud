@@ -1,6 +1,7 @@
 package com.xdx97.framework.mapper.authority;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.xdx97.framework.common.MyBaseMapper;
 import com.xdx97.framework.entitys.pojo.authority.Authority;
 import com.xdx97.framework.entitys.pojo.authority.Menu;
 import org.apache.ibatis.annotations.Mapper;
@@ -9,7 +10,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 @Mapper
-public interface AuthorityMapper extends BaseMapper<Authority> {
+public interface AuthorityMapper extends MyBaseMapper<Authority> {
 
     /**
      * 根据 角色ID 获取权限名
@@ -17,5 +18,5 @@ public interface AuthorityMapper extends BaseMapper<Authority> {
      * @param roleId
      * @return
      */
-    List<String> listbyroleId(@Param("roleId") String roleId);
+    List<String> listByRoleId(@Param("roleId") String roleId);
 }

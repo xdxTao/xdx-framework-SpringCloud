@@ -1,24 +1,24 @@
 package com.xdx97.framework.mapper.authority;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.xdx97.framework.common.MyBaseMapper;
 import com.xdx97.framework.entitys.pojo.authority.Menu;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Set;
 
 @Mapper
-public interface MenuMapper extends BaseMapper<Menu> {
+public interface MenuMapper extends MyBaseMapper<Menu> {
 
     /**
      * 获取一级菜单
      *
-     * flag = 1 表示菜单栏
-     * flag = 2 表示实际菜单
      * @param flag
      * @return
      */
-    List<Menu> getOneMenu(@Param("flag") Integer flag);
+    List<Menu> getOneMenu();
 
     /**
      * 获取全部的权限菜单
@@ -35,4 +35,12 @@ public interface MenuMapper extends BaseMapper<Menu> {
      * @return
      */
     List<String> selectNameById(List<String> lists);
+
+    /**
+     * 把已知菜单进行排序
+     *
+     * @param oneMenu
+     * @return
+     */
+    List<Menu> getSortMenu(@Param("set") Set<String> oneMenu);
 }

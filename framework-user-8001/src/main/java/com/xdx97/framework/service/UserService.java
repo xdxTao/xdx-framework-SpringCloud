@@ -12,4 +12,18 @@ public interface UserService {
     User getById(String id);
 
     AjaxResult<?> login(User user);
+
+    /**
+     * 新增用户
+     * @param user
+     * @return
+     */
+    AjaxResult<?> userSave(User user);
+
+    /**
+     * 更新用户
+     * @param user
+     * @return
+     */
+    AjaxResult<?> userUpdate(User user);
 }

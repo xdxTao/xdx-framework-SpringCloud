@@ -24,10 +24,16 @@ public interface AuthorityService {
     /**
      * 菜单列表
      *
-     * @param flag 查询的类型
      * @return
      */
-    AjaxResult<List<Menu>> meanList(Integer flag);
+    AjaxResult<List<Menu>> menuList();
+
+    /**
+     * 菜单管理列表
+     *
+     * @return
+     */
+    AjaxResult<List<Menu>> meanMgmtList();
 
     /**
      * 更新菜单
@@ -87,5 +93,6 @@ public interface AuthorityService {
      *
      * @return
      */
-    AjaxResult<List<String>> listbyroleId(String roleId);
+    AjaxResult<List<String>> listByRoleId(String roleId);
+
 }

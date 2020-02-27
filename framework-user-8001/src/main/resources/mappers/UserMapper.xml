@@ -1,5 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xdx97.framework.mapper.UserMapper">
+    <resultMap id="baseMap" type="com.xdx97.framework.entitys.pojo.user.User">
+        <id column="user_id" jdbcType="CHAR" property="userId" />
+        <result column="user_name" jdbcType="VARCHAR" property="userName" />
+        <result column="user_phone" jdbcType="VARCHAR" property="userPhone" />
+        <result column="role_id" jdbcType="CHAR" property="roleId" />
+        <result column="user_password" jdbcType="CHAR" property="userPassword" />
+        <result column="salt" jdbcType="CHAR" property="salt" />
+        <result column="openid" jdbcType="VARCHAR" property="openid" />
+        <result column="user_status" jdbcType="TINYINT" property="userStatus" />
+        <result column="head_img_path" jdbcType="VARCHAR" property="headImgPath" />
+        <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+        <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+        <result column="user_create" jdbcType="CHAR" property="userCreate" />
+        <result column="user_modified" jdbcType="CHAR" property="userModified" />
+
+        <result column="roleName" jdbcType="CHAR" property="roleName" />
+    </resultMap>
+
+    <sql id="base_column_list">
+        ${base}.user_id,
+        ${base}.user_name,
+        ${base}.user_phone,
+        ${base}.role_id,
+        ${base}.user_password,
+        ${base}.salt,
+        ${base}.openid,
+        ${base}.user_status,
+        ${base}.head_img_path,
+        ${base}.gmt_create,
+        ${base}.gmt_modified,
+        ${base}.user_create,
+        ${base}.user_modified
+     </sql>
+
+    <select id="list" resultMap="baseMap">
+        SELECT
+            <include refid="base_column_list">
+                <property name="base" value="user" />
+            </include>
+        ,role.role_name roleName
+        FROM user
+        LEFT JOIN role ON user.role_id = role.role_id
+    </select>
+
+
 
 </mapper>
