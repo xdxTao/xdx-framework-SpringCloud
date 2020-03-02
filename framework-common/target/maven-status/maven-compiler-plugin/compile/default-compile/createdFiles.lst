@@ -21,6 +21,7 @@ com\xdx97\framework\entitys\pojo\user\User.class
 com\xdx97\framework\utils\redis\RedisManager.class
 com\xdx97\framework\config\RedisConfig$1.class
 com\xdx97\framework\utils\redis\CacheContext.class
+com\xdx97\framework\entitys\vo\Message.class
 com\xdx97\framework\utils\primarykeysnowflake\SnowflakeIdWorker$1.class
 com\xdx97\framework\entitys\dto\authority\AuthorityResult.class
 com\xdx97\framework\entitys\pojo\authority\Authority.class

@@ -34,6 +34,7 @@
         <security.version>2.0.0.RELEASE</security.version>
         <dataRedis.version>2.2.0.RELEASE</dataRedis.version>
         <jedis.version>2.9.0</jedis.version>
+        <rocketmq.version>2.0.2</rocketmq.version>
     </properties>
 
     <dependencyManagement>
@@ -134,6 +135,12 @@
                 <groupId>redis.clients</groupId>
                 <artifactId>jedis</artifactId>
                 <version>${jedis.version}</version>
+            </dependency>
+            <!-- RocketMQ -->
+            <dependency>
+                <groupId>org.apache.rocketmq</groupId>
+                <artifactId>rocketmq-spring-boot-starter</artifactId>
+                <version>${rocketmq.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
