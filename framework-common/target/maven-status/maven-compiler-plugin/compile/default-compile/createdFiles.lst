@@ -1,4 +1,5 @@
 com\xdx97\framework\config\SnowflakeIdWorkerProperties.class
+com\xdx97\framework\entitys\dto\user\UserDto.class
 com\xdx97\framework\utils\UUIDUtils.class
 com\xdx97\framework\common\AjaxResult.class
 com\xdx97\framework\entitys\pojo\authority\Menu.class
@@ -12,6 +13,7 @@ com\xdx97\framework\common\MyBaseMapper.class
 com\xdx97\framework\entitys\pojo\authority\Role.class
 com\xdx97\framework\utils\primarykeysnowflake\SnowflakeIdWorker$LazyHolder.class
 com\xdx97\framework\handler\BaseEnumTypeHandler.class
+com\xdx97\framework\entitys\pojo\rocketmq\Message.class
 com\xdx97\framework\utils\primarykeysnowflake\BasePrimaryKeyGenerator.class
 com\xdx97\framework\common\MyCommonService.class
 com\xdx97\framework\enums\YesOrNoStatusEnum.class
@@ -21,7 +23,7 @@ com\xdx97\framework\entitys\pojo\user\User.class
 com\xdx97\framework\utils\redis\RedisManager.class
 com\xdx97\framework\config\RedisConfig$1.class
 com\xdx97\framework\utils\redis\CacheContext.class
-com\xdx97\framework\entitys\vo\Message.class
 com\xdx97\framework\utils\primarykeysnowflake\SnowflakeIdWorker$1.class
 com\xdx97\framework\entitys\dto\authority\AuthorityResult.class
+com\xdx97\framework\entitys\vo\MessageVo.class
 com\xdx97\framework\entitys\pojo\authority\Authority.class

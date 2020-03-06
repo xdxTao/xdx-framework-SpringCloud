@@ -1,6 +1,7 @@
 package com.xdx97.framework.mapper;
 
 import com.xdx97.framework.common.MyBaseMapper;
+import com.xdx97.framework.entitys.dto.user.UserDto;
 import com.xdx97.framework.entitys.pojo.user.User;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -18,4 +19,10 @@ public interface UserMapper extends MyBaseMapper<User> {
      * @return
      */
     List<User> list(User user);
+
+    /**
+     * userDto 列表
+     * @return
+     */
+    List<UserDto> userDtoList();
 }

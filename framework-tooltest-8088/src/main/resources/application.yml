@@ -25,7 +25,7 @@ spring:
         database: 1
         host: xxxxx
         port: 8379
-        password: xxxxxxxx
+        password: xxxx
         timeout: 3000
         jedis:
             pool:
@@ -53,7 +53,7 @@ info:
 
 
 rocketmq:
-  name-server: 106.54.142.48:9876
+  name-server: xxxxxxx:9876
   producer:
     send-message-timeout: 300000
     group: rocketmq-group

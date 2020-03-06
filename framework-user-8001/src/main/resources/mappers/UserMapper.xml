@@ -19,6 +19,12 @@
         <result column="roleName" jdbcType="CHAR" property="roleName" />
     </resultMap>
 
+    <resultMap id="baseDtoMap" type="com.xdx97.framework.entitys.dto.user.UserDto">
+        <result column="userId" jdbcType="CHAR" property="userId" />
+        <result column="userName" jdbcType="CHAR" property="userName" />
+        <result column="disabled" jdbcType="CHAR" property="disabled" />
+    </resultMap>
+
     <sql id="base_column_list">
         ${base}.user_id,
         ${base}.user_name,
@@ -35,6 +41,7 @@
         ${base}.user_modified
      </sql>
 
+    <!-- 用户列表 -->
     <select id="list" resultMap="baseMap">
         SELECT
             <include refid="base_column_list">
@@ -45,6 +52,14 @@
         LEFT JOIN role ON user.role_id = role.role_id
     </select>
 
-
+    <!-- dto列表 -->
+    <select id="userDtoList" resultMap="baseDtoMap">
+        SELECT
+            user_id AS userId,
+            user_name AS userName,
+            IFNULL(NULL, false ) AS disabled
+        FROM
+            USER
+    </select>
 
 </mapper>

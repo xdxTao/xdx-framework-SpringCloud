@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xdx97.framework.mapper.message.MessageMapper">
+
+    <resultMap id="baseMap" type="com.xdx97.framework.entitys.pojo.rocketmq.Message">
+        <id column="msg_id" jdbcType="CHAR" property="msgId" />
+        <result column="msg_content" jdbcType="VARCHAR" property="msgContent" />
+        <result column="recv_id" jdbcType="CHAR" property="recvId" />
+        <result column="sender_id" jdbcType="CHAR" property="senderId" />
+        <result column="msg_type" jdbcType="BIT" property="msgType" />
+        <result column="msg_sts" jdbcType="BIT" property="msgSts" />
+        <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+        <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+
+        <result column="senderName" jdbcType="TIMESTAMP" property="senderName" />
+    </resultMap>
+
+    <sql id="base_column_list">
+        ${base}.msg_id,
+        ${base}.msg_content,
+        ${base}.recv_id,
+        ${base}.sender_id,
+        ${base}.msg_type,
+        ${base}.msg_sts,
+        ${base}.gmt_create,
+        ${base}.gmt_modified
+     </sql>
+
+    <select id="getUnreadCountById" resultType="java.lang.Integer">
+        SELECT count(*) FROM message  WHERE recv_id = #{userId} AND msg_sts = 0
+    </select>
+
+    <select id="list" resultMap="baseMap">
+        SELECT
+          <include refid="base_column_list">
+              <property name="base" value="message"/>
+          </include>
+          ,user.user_name senderName
+        FROM
+        message
+        LEFT JOIN user ON user.user_id = message.sender_id
+        WHERE message.recv_id = #{userId}
+        ORDER BY message.msg_sts ASC ,message.gmt_create DESC
+    </select>
+
+</mapper>

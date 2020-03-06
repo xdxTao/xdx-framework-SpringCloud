@@ -3,6 +3,7 @@ package com.xdx97.framework.service.impl;
 
 import com.xdx97.framework.common.AjaxResult;
 import com.xdx97.framework.common.MyCommonService;
+import com.xdx97.framework.entitys.dto.user.UserDto;
 import com.xdx97.framework.entitys.pojo.user.User;
 import com.xdx97.framework.mapper.UserMapper;
 import com.xdx97.framework.service.UserService;
@@ -81,5 +82,17 @@ public class UserServiceImpl extends MyCommonService
                 .setGmtModified(new Date());
         userMapper.updateById(user);
         return AjaxResult.success("更新成功");
+    }
+
+    /**
+     * userDto 列表
+     * @return
+     */
+    @Override
+    public AjaxResult<List<UserDto>> userDtoList() {
+
+        List<UserDto> lists = userMapper.userDtoList();
+
+        return AjaxResult.success(lists);
     }
 }

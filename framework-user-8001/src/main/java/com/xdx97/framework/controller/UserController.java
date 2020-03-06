@@ -2,6 +2,7 @@ package com.xdx97.framework.controller;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.xdx97.framework.common.AjaxResult;
+import com.xdx97.framework.entitys.dto.user.UserDto;
 import com.xdx97.framework.entitys.pojo.user.User;
 import com.xdx97.framework.service.impl.UserServiceImpl;
 import com.xdx97.framework.utils.redis.RedisUtils;
@@ -63,6 +64,17 @@ public class UserController {
 
         return userServiceImpl.userUpdate(user);
     }
+
+    /**
+     * @param user
+     * @return
+     */
+    @GetMapping("/user/listDto")
+    public AjaxResult<List<UserDto>> userDtoList(){
+
+        return userServiceImpl.userDtoList();
+    }
+
 
     public User processHystrix_Get(@PathVariable("id") String id) {
         System.out.println("进入异常了~~~~");

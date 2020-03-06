@@ -10,7 +10,7 @@
         <result column="user_modified" jdbcType="CHAR" property="userModified" />
     </resultMap>
 
-    <sql id="Base_Column_List">
+    <sql id="base_column_list">
         role_id,
         role_name,
         gmt_create,

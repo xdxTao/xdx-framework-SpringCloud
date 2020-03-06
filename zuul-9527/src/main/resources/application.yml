@@ -46,3 +46,9 @@ info:
   company.name: www.xdx97.com
   build.artifactId: $project.artifactId$
   build.version: $project.version$
+
+rocketmq:
+  name-server: xxxxxxx:9876
+  producer:
+    send-message-timeout: 300000
+    group: rocketmq-group
