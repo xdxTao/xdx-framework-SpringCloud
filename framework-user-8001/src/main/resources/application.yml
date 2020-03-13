@@ -30,9 +30,9 @@ spring:
     # redis配置
     redis:
         database: 1
-        host: xxxx
+        host: 47.100.60.252
         port: 8379
-        password: xxxxxx
+        password: fdE#84K$EW~
         timeout: 3000
         jedis:
             pool:
@@ -62,7 +62,7 @@ info:
 
 
 rocketmq:
-  name-server: xxxxxxxx:9876
+  name-server: 106.54.142.48:9876
   producer:
     send-message-timeout: 300000
     group: rocketmq-group

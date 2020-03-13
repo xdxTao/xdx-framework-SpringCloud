@@ -24,11 +24,20 @@ public class UserController {
     @Autowired
     private UserServiceImpl userServiceImpl;
 
-
+    /**
+     * 用户列表
+     *
+     * @param page 当前页
+     * @return List<User> 用户列表
+     * @author 小道仙
+     * @date 2020年3月13日
+     */
     @GetMapping("/user/list")
-    public AjaxResult<List<User>> list(){
+    public AjaxResult<List<User>> list(@RequestParam int page,String userName,String roleId){
 
-        return userServiceImpl.selectList();
+        User user = new User();
+        user.setUserName(userName).setRoleId(roleId);
+        return userServiceImpl.selectList(page,user);
     }
 
     /**

@@ -1,6 +1,8 @@
 package com.xdx97.framework.service.impl;
 
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import com.xdx97.framework.common.AjaxResult;
 import com.xdx97.framework.common.MyCommonService;
 import com.xdx97.framework.entitys.dto.user.UserDto;
@@ -25,10 +27,11 @@ public class UserServiceImpl extends MyCommonService
     private UserMapper userMapper;
 
     @Override
-    public AjaxResult<List<User>> selectList() {
+    public AjaxResult<List<User>> selectList(int page,User user) {
 
-        List<User> xUsers = userMapper.list(new User());
-        return AjaxResult.success(xUsers);
+        startPage(page);
+        Page<User> xUsers = userMapper.list(user);
+        return AjaxResult.success(xUsers.getResult()).setTotal(xUsers.getTotal());
     }
 
     @Override

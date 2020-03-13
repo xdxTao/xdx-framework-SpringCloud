@@ -8,7 +8,14 @@ import java.util.List;
 
 public interface UserService {
 
-    AjaxResult<List<User>> selectList();
+    /**
+     * 获取用户列表
+     *
+     * @param page 当前页
+     * @param user 条件查询
+     * @return List<User> 用户列表
+     */
+    AjaxResult<List<User>> selectList(int page,User user);
 
     User getById(String id);
 

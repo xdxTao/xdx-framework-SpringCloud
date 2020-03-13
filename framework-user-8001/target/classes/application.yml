@@ -61,8 +61,6 @@ info:
 
 
 
-xdxToken: 38djsd23u4098edhsaid2348
-
 rocketmq:
   name-server: 106.54.142.48:9876
   producer:

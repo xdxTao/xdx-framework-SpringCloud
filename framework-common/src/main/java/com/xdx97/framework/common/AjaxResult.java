@@ -25,7 +25,7 @@ public class AjaxResult<T> {
     /**
      * 总条数
      */
-    private Integer total;
+    private Long total;
 
     /**
      * 成功与否
@@ -70,7 +70,7 @@ public class AjaxResult<T> {
      * @author 小道仙
      * @date 2020年2月17日
      */
-    public static <T> AjaxResult<T> success(String msg,Integer total,T data){
+    public static <T> AjaxResult<T> success(String msg,long total,T data){
         AjaxResult<T> result = new AjaxResult<>();
         result.setSuccess(true)
                 .setTotal(total)
@@ -86,7 +86,7 @@ public class AjaxResult<T> {
      * @author 小道仙
      * @date 2020年2月17日
      */
-    public static <T> AjaxResult<T> success(T data,Integer total){
+    public static <T> AjaxResult<T> success(T data,long total){
         AjaxResult<T> result = new AjaxResult<>();
         result.setSuccess(true)
                 .setTotal(total)

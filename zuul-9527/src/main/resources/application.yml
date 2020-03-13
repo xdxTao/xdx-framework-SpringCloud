@@ -7,9 +7,9 @@ spring:
     # redis配置
     redis:
         database: 1
-        host: xxxxxx
+        host: 47.100.60.252
         port: 8379
-        password: xxxx
+        password: fdE#84K$EW~
         timeout: 3000
         jedis:
             pool:
@@ -29,26 +29,25 @@ eureka:
             #defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
 
 zuul:
-  routes:
-    myuser.serviceId: framework-user
-    myuser.path: /myuser/**
-    mytools.serviceId: framework-tools
-    mytools.path: /mytools/**
-  #ignored-services: framework-user       # 不允许使用真实的微服务名访问   单个
-  ignored-services: "*"               # 不允许使用真实的微服务名访问   全部
-  prefix: /xdx                          # 设置同一访问前缀
+    routes:
+        myuser.serviceId: framework-user
+        myuser.path: /myuser/**
+        mytools.serviceId: framework-tools
+        mytools.path: /mytools/**
+    #ignored-services: framework-user       # 不允许使用真实的微服务名访问   单个
+    ignored-services: "*"               # 不允许使用真实的微服务名访问   全部
+    prefix: /xdx                          # 设置同一访问前缀
 
-# http://myzuul.com:9527/xdx/myuser/user/getById/1
 
 # 配置info信息
 info:
-  app.name: framework-zuul
-  company.name: www.xdx97.com
-  build.artifactId: $project.artifactId$
-  build.version: $project.version$
+    app.name: framework-zuul
+    company.name: www.xdx97.com
+    build.artifactId: $project.artifactId$
+    build.version: $project.version$
 
 rocketmq:
-  name-server: xxxxxxx:9876
-  producer:
-    send-message-timeout: 300000
-    group: rocketmq-group
+    name-server: 106.54.142.48:9876
+    producer:
+        send-message-timeout: 300000
+        group: rocketmq-group

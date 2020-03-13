@@ -41,6 +41,20 @@
         ${base}.user_modified
      </sql>
 
+    <sql id="base_where">
+        <trim prefix="where" prefixOverrides="and|or">
+            <if test="userName != null and userName != ''">
+                AND (
+                    ${base}.user_name LIKE CONCAT('%',#{userName},'%')
+                    OR ${base}.user_phone LIKE CONCAT('%',#{userName},'%')
+                )
+            </if>
+            <if test="roleId != null and roleId != ''">
+                AND ${base}.role_id = #{roleId}
+            </if>
+        </trim>
+    </sql>
+
     <!-- 用户列表 -->
     <select id="list" resultMap="baseMap">
         SELECT
@@ -50,6 +64,9 @@
         ,role.role_name roleName
         FROM user
         LEFT JOIN role ON user.role_id = role.role_id
+        <include refid="base_where">
+            <property name="base" value="user" />
+        </include>
     </select>
 
     <!-- dto列表 -->

@@ -1,5 +1,6 @@
 package com.xdx97.framework.mapper;
 
+import com.github.pagehelper.Page;
 import com.xdx97.framework.common.MyBaseMapper;
 import com.xdx97.framework.entitys.dto.user.UserDto;
 import com.xdx97.framework.entitys.pojo.user.User;
@@ -18,7 +19,7 @@ public interface UserMapper extends MyBaseMapper<User> {
      * @param user
      * @return
      */
-    List<User> list(User user);
+    Page<User> list(User user);
 
     /**
      * userDto 列表
