@@ -36,6 +36,7 @@
         <jedis.version>2.9.0</jedis.version>
         <rocketmq.version>2.0.2</rocketmq.version>
         <pagehelper.version>1.2.12</pagehelper.version>
+        <swagger.version>1.7.0.RELEASE</swagger.version>
     </properties>
 
     <dependencyManagement>
@@ -149,6 +150,13 @@
                 <artifactId>pagehelper-spring-boot-starter</artifactId>
                 <version>${pagehelper.version}</version>
             </dependency>
+            <!-- swagger API文档插件 -->
+            <dependency>
+                <groupId>com.spring4all</groupId>
+                <artifactId>swagger-spring-boot-starter</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 

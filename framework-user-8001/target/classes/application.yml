@@ -60,11 +60,15 @@ info:
     build.version: $project.version$
 
 
-
+# RocketMQ
 rocketmq:
   name-server: 106.54.142.48:9876
   producer:
     send-message-timeout: 300000
     group: rocketmq-group
+
+#swagger扫包
+swagger:
+  base-package: com.xdx97.framework.controller
 
 

@@ -1,6 +1,7 @@
 package com.xdx97.framework.common;
 
 import lombok.Data;
+import lombok.ToString;
 import lombok.experimental.Accessors;
 
 /**
@@ -10,6 +11,7 @@ import lombok.experimental.Accessors;
  * @date 2020年2月17日
  */
 @Data
+@ToString
 @Accessors(chain = true)
 public class AjaxResult<T> {
     /**
@@ -143,13 +145,3 @@ public class AjaxResult<T> {
         return success("操作成功",0,null);
     }
 }
-
-
-/**
- *
- * 2020年2月17日
- *  1、code 暂时不用
- *  2、只用success来表示成功与否
- *
- *
- */

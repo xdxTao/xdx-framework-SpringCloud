@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.xdx97.framework.enums.YesOrNoStatusEnum;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -12,31 +14,37 @@ import java.util.Date;
 
 @Data
 @Accessors(chain = true)
+@ApiModel("用户实体")
 public class User implements Serializable {
     /**
      * 用户id
      */
     @TableId
+    @ApiModelProperty("用户id")
     private String userId;
 
     /**
      * 用户名
      */
+    @ApiModelProperty("用户名")
     private String userName;
 
     /**
      * 用户手机号
      */
+    @ApiModelProperty("用户手机号")
     private String userPhone;
 
     /**
      * 角色id
      */
+    @ApiModelProperty("角色id")
     private String roleId;
 
     /**
      * 用户密码
      */
+    @ApiModelProperty("用户密码")
     private String userPassword;
 
     /**
@@ -52,11 +60,13 @@ public class User implements Serializable {
     /**
      * 用户状态:1启用0停用
      */
+    @ApiModelProperty("用户状态")
     private YesOrNoStatusEnum userStatus;
 
     /**
      * 头像路径
      */
+    @ApiModelProperty("头像路径")
     private String headImgPath;
 
     /**
@@ -83,6 +93,7 @@ public class User implements Serializable {
 
     /** 角色名 */
     @TableField(exist = false)
+    @ApiModelProperty("角色名")
     private String roleName;
 
     private static final long serialVersionUID = 1L;

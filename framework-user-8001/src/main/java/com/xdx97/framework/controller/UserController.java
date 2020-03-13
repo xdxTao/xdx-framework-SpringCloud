@@ -5,9 +5,8 @@ import com.xdx97.framework.common.AjaxResult;
 import com.xdx97.framework.entitys.dto.user.UserDto;
 import com.xdx97.framework.entitys.pojo.user.User;
 import com.xdx97.framework.service.impl.UserServiceImpl;
-import com.xdx97.framework.utils.redis.RedisUtils;
+import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,6 +18,7 @@ import java.util.List;
  * @date 2020年2月27日
  */
 @RestController
+@Api(tags = "用户相关接口", description = "提供用户相关的 Rest API")
 public class UserController {
 
     @Autowired
@@ -32,27 +32,16 @@ public class UserController {
      * @author 小道仙
      * @date 2020年3月13日
      */
+    @ApiOperation(value="用户列表" )
     @GetMapping("/user/list")
-    public AjaxResult<List<User>> list(@RequestParam int page,String userName,String roleId){
+    public AjaxResult<List<User>> list(
+            @ApiParam(value = "当前页", required = true) @RequestParam int page,
+            @ApiParam(value = "用户名/用户电话") @RequestParam String userName,
+            @ApiParam(value = "角色") @RequestParam String roleId){
 
         User user = new User();
         user.setUserName(userName).setRoleId(roleId);
         return userServiceImpl.selectList(page,user);
-    }
-
-    /**
-     *  @HystrixCommand
-     *  这是 hystrix的一个服务容错处理，当然该方法异常的时候，就去调用 processHystrix_Get 方法
-     */
-    @GetMapping("/user/getById/{id}")
-    @HystrixCommand(fallbackMethod = "processHystrix_Get")
-    public User getById(@PathVariable("id")  String id){
-        System.out.println("id = " + id);
-        User user = userServiceImpl.getById(id);
-        if (user == null){
-            throw new  RuntimeException("测试异常！");
-        }
-        return user;
     }
 
     @GetMapping("/user/login")
@@ -84,6 +73,21 @@ public class UserController {
         return userServiceImpl.userDtoList();
     }
 
+
+    /**
+     *  @HystrixCommand
+     *  这是 hystrix的一个服务容错处理，当然该方法异常的时候，就去调用 processHystrix_Get 方法
+     */
+    @GetMapping("/user/getById/{id}")
+    @HystrixCommand(fallbackMethod = "processHystrix_Get")
+    public User getById(@PathVariable("id")  String id){
+        System.out.println("id = " + id);
+        User user = userServiceImpl.getById(id);
+        if (user == null){
+            throw new  RuntimeException("测试异常！");
+        }
+        return user;
+    }
 
     public User processHystrix_Get(@PathVariable("id") String id) {
         System.out.println("进入异常了~~~~");

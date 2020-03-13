@@ -1,5 +1,6 @@
 package com.xdx97.framework.fallback;
 
+import com.xdx97.framework.common.AjaxResult;
 import org.springframework.cloud.netflix.zuul.filters.route.FallbackProvider;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -50,8 +51,8 @@ public class UserFallback implements FallbackProvider {
             @Override
             public InputStream getBody() throws IOException {
                 // 设置降级信息
-                // String msg = "fallback:" + ConsumerFallback.this.getRoute();
-                String msg = "fallback:" + route;
+//                String msg = "fallback:" + route;
+                String msg = "{code: null， data: null,total: 0, success: false, msg: null,errDesc: \"系统异常\",xdxToken: null}";
                 return new ByteArrayInputStream(msg.getBytes());
             }
 

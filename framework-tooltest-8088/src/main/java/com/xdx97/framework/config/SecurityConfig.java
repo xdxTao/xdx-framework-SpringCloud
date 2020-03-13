@@ -31,6 +31,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter  {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        http.authorizeRequests()
+                .antMatchers("/v2/api-docs", "/swagger-resources/**", "/webjars/**", "/swagger-ui.html")
+                .permitAll();
 
         // 去掉 CSRF
         http.cors().and().csrf().disable()

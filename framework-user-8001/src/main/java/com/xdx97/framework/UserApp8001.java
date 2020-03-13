@@ -1,6 +1,7 @@
 package com.xdx97.framework;
 
 import com.netflix.hystrix.contrib.metrics.eventstream.HystrixMetricsStreamServlet;
+import com.spring4all.swagger.EnableSwagger2Doc;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
@@ -16,6 +17,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @EnableEurekaClient             // 本服务启动后会自动注册进eureka
 @EnableDiscoveryClient          // 服务发现
 @EnableCircuitBreaker           //
+@EnableSwagger2Doc              // 开启Swagger2文档
 public class UserApp8001 {
     public static void main(String[] args) {
 
