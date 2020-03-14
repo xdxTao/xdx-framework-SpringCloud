@@ -2,18 +2,15 @@ package com.xdx97.framework.service.impl;
 
 
 import com.github.pagehelper.Page;
-import com.github.pagehelper.PageHelper;
 import com.xdx97.framework.common.AjaxResult;
 import com.xdx97.framework.common.MyCommonService;
-import com.xdx97.framework.entitys.dto.user.UserDto;
 import com.xdx97.framework.entitys.pojo.user.User;
+import com.xdx97.framework.entitys.vo.user.UserVo;
 import com.xdx97.framework.mapper.UserMapper;
 import com.xdx97.framework.service.UserService;
 import com.xdx97.framework.utils.UUIDUtils;
 import com.xdx97.framework.utils.redis.RedisUtils;
-import jdk.nashorn.internal.parser.Token;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -92,9 +89,9 @@ public class UserServiceImpl extends MyCommonService
      * @return
      */
     @Override
-    public AjaxResult<List<UserDto>> userDtoList() {
+    public AjaxResult<List<UserVo>> userDtoList() {
 
-        List<UserDto> lists = userMapper.userDtoList();
+        List<UserVo> lists = userMapper.userDtoList();
 
         return AjaxResult.success(lists);
     }

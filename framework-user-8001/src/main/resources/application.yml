@@ -62,7 +62,7 @@ info:
 
 # RocketMQ
 rocketmq:
-  name-server: xxxxxxx:9876
+  name-server: xxxxxx:9876
   producer:
     send-message-timeout: 300000
     group: rocketmq-group
@@ -70,5 +70,3 @@ rocketmq:
 #swagger扫包
 swagger:
   base-package: com.xdx97.framework.controller
-
-

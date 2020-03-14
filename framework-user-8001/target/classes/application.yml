@@ -70,5 +70,3 @@ rocketmq:
 #swagger扫包
 swagger:
   base-package: com.xdx97.framework.controller
-
-

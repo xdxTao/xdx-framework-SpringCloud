@@ -1,4 +1,6 @@
 C:\Users\Administrator\Desktop\xdxframework\framework-common\src\main\java\com\xdx97\framework\utils\UUIDUtils.java
+C:\Users\Administrator\Desktop\xdxframework\framework-common\src\main\java\com\xdx97\framework\entitys\dto\user\UserAddDto.java
+C:\Users\Administrator\Desktop\xdxframework\framework-common\src\main\java\com\xdx97\framework\entitys\vo\authority\AuthorityResult.java
 C:\Users\Administrator\Desktop\xdxframework\framework-common\src\main\java\com\xdx97\framework\entitys\pojo\user\User.java
 C:\Users\Administrator\Desktop\xdxframework\framework-common\src\main\java\com\xdx97\framework\utils\redis\RedisManager.java
 C:\Users\Administrator\Desktop\xdxframework\framework-common\src\main\java\com\xdx97\framework\utils\redis\RedisUtils.java
@@ -6,14 +8,12 @@ C:\Users\Administrator\Desktop\xdxframework\framework-common\src\main\java\com\x
 C:\Users\Administrator\Desktop\xdxframework\framework-common\src\main\java\com\xdx97\framework\utils\redis\CacheContext.java
 C:\Users\Administrator\Desktop\xdxframework\framework-common\src\main\java\com\xdx97\framework\entitys\pojo\authority\Menu.java
 C:\Users\Administrator\Desktop\xdxframework\framework-common\src\main\java\com\xdx97\framework\utils\SpringContextUtils.java
-C:\Users\Administrator\Desktop\xdxframework\framework-common\src\main\java\com\xdx97\framework\entitys\dto\authority\AuthorityResult.java
 C:\Users\Administrator\Desktop\xdxframework\framework-common\src\main\java\com\xdx97\framework\enums\YesOrNoStatusEnum.java
-C:\Users\Administrator\Desktop\xdxframework\framework-common\src\main\java\com\xdx97\framework\entitys\dto\authority\AuthorityDto.java
+C:\Users\Administrator\Desktop\xdxframework\framework-common\src\main\java\com\xdx97\framework\entitys\vo\user\UserVo.java
 C:\Users\Administrator\Desktop\xdxframework\framework-common\src\main\java\com\xdx97\framework\entitys\pojo\authority\Role.java
+C:\Users\Administrator\Desktop\xdxframework\framework-common\src\main\java\com\xdx97\framework\entitys\dto\authority\RoleAddDto.java
 C:\Users\Administrator\Desktop\xdxframework\framework-common\src\main\java\com\xdx97\framework\config\RedisConfig.java
 C:\Users\Administrator\Desktop\xdxframework\framework-common\src\main\java\com\xdx97\framework\entitys\pojo\authority\Authority.java
-C:\Users\Administrator\Desktop\xdxframework\framework-common\src\main\java\com\xdx97\framework\entitys\vo\MessageVo.java
-C:\Users\Administrator\Desktop\xdxframework\framework-common\src\main\java\com\xdx97\framework\entitys\dto\user\UserDto.java
 C:\Users\Administrator\Desktop\xdxframework\framework-common\src\main\java\com\xdx97\framework\common\MyCommonService.java
 C:\Users\Administrator\Desktop\xdxframework\framework-common\src\main\java\com\xdx97\framework\utils\primarykeysnowflake\BasePrimaryKeyGenerator.java
 C:\Users\Administrator\Desktop\xdxframework\framework-common\src\main\java\com\xdx97\framework\common\AjaxResult.java
@@ -21,6 +21,9 @@ C:\Users\Administrator\Desktop\xdxframework\framework-common\src\main\java\com\x
 C:\Users\Administrator\Desktop\xdxframework\framework-common\src\main\java\com\xdx97\framework\utils\primarykeysnowflake\SnowflakeIdWorker.java
 C:\Users\Administrator\Desktop\xdxframework\framework-common\src\main\java\com\xdx97\framework\config\SnowflakeIdWorkerProperties.java
 C:\Users\Administrator\Desktop\xdxframework\framework-common\src\main\java\com\xdx97\framework\utils\primarykeysnowflake\PrimaryKeySnowflakeGenerator.java
+C:\Users\Administrator\Desktop\xdxframework\framework-common\src\main\java\com\xdx97\framework\entitys\dto\authority\MenuAddDto.java
+C:\Users\Administrator\Desktop\xdxframework\framework-common\src\main\java\com\xdx97\framework\entitys\dto\other\MessageDto.java
 C:\Users\Administrator\Desktop\xdxframework\framework-common\src\main\java\com\xdx97\framework\handler\BaseEnumTypeHandler.java
+C:\Users\Administrator\Desktop\xdxframework\framework-common\src\main\java\com\xdx97\framework\entitys\vo\authority\AuthorityVo.java
 C:\Users\Administrator\Desktop\xdxframework\framework-common\src\main\java\com\xdx97\framework\enums\IBaseEnum.java
 C:\Users\Administrator\Desktop\xdxframework\framework-common\src\main\java\com\xdx97\framework\entitys\pojo\rocketmq\Message.java

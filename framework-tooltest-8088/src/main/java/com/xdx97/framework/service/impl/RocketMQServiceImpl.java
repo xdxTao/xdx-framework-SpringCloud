@@ -2,7 +2,7 @@ package com.xdx97.framework.service.impl;
 
 import com.xdx97.framework.common.AjaxResult;
 import com.xdx97.framework.common.MyCommonService;
-import com.xdx97.framework.entitys.vo.MessageVo;
+import com.xdx97.framework.entitys.dto.other.MessageDto;
 import com.xdx97.framework.service.RocketMQService;
 import org.apache.rocketmq.spring.core.RocketMQTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ public class RocketMQServiceImpl extends MyCommonService implements RocketMQServ
     private RocketMQTemplate rocketMQTemplate;
 
     @Override
-    public AjaxResult<?> send(MessageVo MessageVo) {
+    public AjaxResult<?> send(MessageDto MessageVo) {
 
         Map<String,Object> header = new HashMap<>();
         header.put("userIds",MessageVo.getUserIds());

@@ -11,8 +11,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 public class Swagger2Config {
-    //api接口包扫描路径
-    public static final String SWAGGER_SCAN_BASE_PACKAGE = "com.xdx97.framework.controller";
 
     public static final String VERSION = "1.0.0";
 
@@ -25,13 +23,12 @@ public class Swagger2Config {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 //设置文档的标题
-                .title("单词计数服务")
+                .title("工具相关服务")
                 // 设置文档的描述
-                .description("单词计数服务 API 接口文档")
+                .description("工具相关服务 API 接口文档")
                 // 设置文档的版本信息-> 1.0.0 Version information
                 .version(VERSION)
                 // 设置文档的License信息->1.3 License information
-                .termsOfServiceUrl("http://www.baidu.com")
                 .build();
     }
 }

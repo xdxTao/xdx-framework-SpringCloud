@@ -1,5 +1,7 @@
-package com.xdx97.framework.entitys.dto.authority;
+package com.xdx97.framework.entitys.vo.authority;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -13,14 +15,17 @@ import java.util.List;
  */
 @Data
 @Accessors(chain = true)
-public class AuthorityDto {
+@ApiModel("权限列表Vo")
+public class AuthorityVo {
     /**
      * 分组名称
      */
+    @ApiModelProperty("分组名称")
     private String groupName;
 
     /**
      * 菜单名称
      */
+    @ApiModelProperty("菜单名称")
     private List<String> menuNames;
 }

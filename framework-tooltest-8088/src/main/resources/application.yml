@@ -23,9 +23,9 @@ spring:
     # redis配置
     redis:
         database: 1
-        host: xxxxx
+        host: xxxxxx
         port: 8379
-        password: xxxx
+        password: xxxxxx
         timeout: 3000
         jedis:
             pool:
@@ -53,9 +53,13 @@ info:
 
 
 rocketmq:
-  name-server: xxxxxxx:9876
+  name-server: xxxxxx:9876
   producer:
     send-message-timeout: 300000
     group: rocketmq-group
+
+#swagger扫包
+swagger:
+  base-package: com.xdx97.framework.controller
 
 

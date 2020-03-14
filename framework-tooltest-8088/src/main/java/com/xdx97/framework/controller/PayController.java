@@ -5,6 +5,9 @@ package com.xdx97.framework.controller;
 import com.alipay.api.AlipayApiException;
 import com.xdx97.framework.service.PayService;
 import com.xdx97.framework.entitys.pay.AlipayBean;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2020年2月17日
  */
 @RestController
+@Api(tags = "支付测试", description = "提供支付相关的 Rest API")
 public class PayController {
 
     @Autowired
@@ -31,7 +35,12 @@ public class PayController {
      * @throws AlipayApiException
      */
     @PostMapping(value = "order/alipay")
-    public String alipay(String outTradeNo, String subject, String totalAmount, String body) throws AlipayApiException {
+    @ApiOperation(value = "支付宝沙箱测试", notes = "创建人 - 小道仙")
+    public String alipay(
+                String outTradeNo,
+                String subject,
+                String totalAmount,
+                String body) throws AlipayApiException {
         AlipayBean alipayBean = new AlipayBean();
         alipayBean.setOut_trade_no(outTradeNo);
         alipayBean.setSubject(subject);

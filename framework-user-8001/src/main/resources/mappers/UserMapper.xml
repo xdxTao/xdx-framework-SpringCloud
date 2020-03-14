@@ -19,7 +19,7 @@
         <result column="roleName" jdbcType="CHAR" property="roleName" />
     </resultMap>
 
-    <resultMap id="baseDtoMap" type="com.xdx97.framework.entitys.dto.user.UserDto">
+    <resultMap id="baseVoMap" type="com.xdx97.framework.entitys.vo.user.UserVo">
         <result column="userId" jdbcType="CHAR" property="userId" />
         <result column="userName" jdbcType="CHAR" property="userName" />
         <result column="disabled" jdbcType="CHAR" property="disabled" />
@@ -70,7 +70,7 @@
     </select>
 
     <!-- dto列表 -->
-    <select id="userDtoList" resultMap="baseDtoMap">
+    <select id="userDtoList" resultMap="baseVoMap">
         SELECT
             user_id AS userId,
             user_name AS userName,

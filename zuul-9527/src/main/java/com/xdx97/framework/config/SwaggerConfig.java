@@ -10,12 +10,12 @@ import java.util.List;
 
 @Component
 @Primary
-class DocumentationConfig implements SwaggerResourcesProvider {
+class SwaggerConfig implements SwaggerResourcesProvider {
     @Override
     public List<SwaggerResource> get() {
         List resources = new ArrayList<>();
-        resources.add(swaggerResource("framework-user", "/xdx/myuser/v2/api-docs", "2.0"));
-        resources.add(swaggerResource("framework-tools", "/xdx/mytools/v2/api-docs", "2.0"));
+        resources.add(swaggerResource("用户服务", "/xdx/myuser/v2/api-docs", "2.0"));
+        resources.add(swaggerResource("工具服务", "/xdx/mytools/v2/api-docs", "2.0"));
         return resources;
     }
 

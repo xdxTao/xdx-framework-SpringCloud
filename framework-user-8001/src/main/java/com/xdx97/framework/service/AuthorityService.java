@@ -1,12 +1,10 @@
 package com.xdx97.framework.service;
 
 import com.xdx97.framework.common.AjaxResult;
-import com.xdx97.framework.entitys.dto.authority.AuthorityDto;
-import com.xdx97.framework.entitys.dto.authority.AuthorityResult;
+import com.xdx97.framework.entitys.vo.authority.AuthorityVo;
+import com.xdx97.framework.entitys.vo.authority.AuthorityResult;
 import com.xdx97.framework.entitys.pojo.authority.Menu;
 import com.xdx97.framework.entitys.pojo.authority.Role;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -79,7 +77,7 @@ public interface AuthorityService {
      *
      * @return
      */
-    AjaxResult<List<AuthorityDto>> authorityList();
+    AjaxResult<List<AuthorityVo>> authorityList();
 
     /**
      * 权限保存

@@ -1,11 +1,7 @@
 package com.xdx97.framework.service;
 
 import com.xdx97.framework.common.AjaxResult;
-import com.xdx97.framework.entitys.vo.MessageVo;
-import org.springframework.web.bind.annotation.RequestBody;
-
-import java.util.HashMap;
-import java.util.Map;
+import com.xdx97.framework.entitys.dto.other.MessageDto;
 
 /**
  * RocketMQ测试
@@ -15,7 +11,7 @@ import java.util.Map;
  */
 public interface RocketMQService {
 
-    AjaxResult<?> send(MessageVo MessageVo);
+    AjaxResult<?> send(MessageDto MessageVo);
 
 
 }

@@ -2,6 +2,8 @@ package com.xdx97.framework.entitys.pojo.authority;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -16,16 +18,19 @@ import java.util.Date;
  */
 @Data
 @Accessors(chain = true)
+@ApiModel("角色实体")
 public class Role {
     /**
      * 角色id
      */
     @TableId
+    @ApiModelProperty("角色id")
     private String roleId;
 
     /**
      * 角色名
      */
+    @ApiModelProperty("角色名")
     private String roleName;
 
     /**

@@ -2,8 +2,9 @@ package com.xdx97.framework.controller;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.xdx97.framework.common.AjaxResult;
-import com.xdx97.framework.entitys.dto.user.UserDto;
+import com.xdx97.framework.entitys.dto.user.UserAddDto;
 import com.xdx97.framework.entitys.pojo.user.User;
+import com.xdx97.framework.entitys.vo.user.UserVo;
 import com.xdx97.framework.service.impl.UserServiceImpl;
 import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,32 +45,71 @@ public class UserController {
         return userServiceImpl.selectList(page,user);
     }
 
+    /**
+     * 用户登录
+     *
+     * @param userName   用户名
+     * @param userPassword  密码
+     * @author 小道仙
+     * @date 2020年3月14
+     */
+    @ApiOperation(value = "登录", notes = "创建人- 小道仙")
     @GetMapping("/user/login")
-    public AjaxResult<?> login(@RequestParam String userName, @RequestParam String userPassword){
+    public AjaxResult<?> login(
+            @ApiParam(value = "用户名", required = true) @RequestParam String userName,
+            @ApiParam(value = "密码", required = true) @RequestParam String userPassword){
         User user = new User();
         user.setUserName(userName).setUserPassword(userPassword);
         return userServiceImpl.login(user);
     }
 
+    /**
+     * 新增用户
+     *
+     * @param userAddDto
+     * @author 小道仙
+     * @date 2020年3月14
+     */
     @PostMapping("/user/save")
-    public AjaxResult<?> userSave(@RequestBody User user){
-
+    @ApiOperation(value="新增用户", notes = "创建人- 小道仙")
+    public AjaxResult<?> userSave(@RequestBody UserAddDto userAddDto){
+        User user = new User();
+        user.setUserName(userAddDto.getUserName())
+                .setUserPhone(userAddDto.getUserPhone())
+                .setRoleId(userAddDto.getRoleId())
+                .setUserPassword(userAddDto.getUserPassword())
+                .setUserStatus(userAddDto.getUserStatus());
         return userServiceImpl.userSave(user);
     }
 
+    /**
+     * 更新用户
+     *
+     * @param userAddDto
+     * @author 小道仙
+     * @date 2020年3月14
+     */
     @PostMapping("/user/update")
-    public AjaxResult<?> userUpdate(@RequestBody User user){
-
+    @ApiOperation(value="更新用户", notes = "创建人- 小道仙")
+    public AjaxResult<?> userUpdate(@RequestBody UserAddDto userAddDto){
+        User user = new User();
+        user.setUserName(userAddDto.getUserName())
+                .setUserPhone(userAddDto.getUserPhone())
+                .setRoleId(userAddDto.getRoleId())
+                .setUserPassword(userAddDto.getUserPassword())
+                .setUserStatus(userAddDto.getUserStatus());
         return userServiceImpl.userUpdate(user);
     }
 
     /**
+     * 用户id和用户名 Vo
+     *
      * @param user
      * @return
      */
     @GetMapping("/user/listDto")
-    public AjaxResult<List<UserDto>> userDtoList(){
-
+    @ApiOperation(value="用户id和用户名Vo", notes = "创建人- 小道仙")
+    public AjaxResult<List<UserVo>> userDtoList(){
         return userServiceImpl.userDtoList();
     }
 
@@ -80,6 +120,7 @@ public class UserController {
      */
     @GetMapping("/user/getById/{id}")
     @HystrixCommand(fallbackMethod = "processHystrix_Get")
+    @ApiOperation(value = "测试接口", hidden = true)
     public User getById(@PathVariable("id")  String id){
         System.out.println("id = " + id);
         User user = userServiceImpl.getById(id);

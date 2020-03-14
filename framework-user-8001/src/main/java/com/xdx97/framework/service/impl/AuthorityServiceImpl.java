@@ -3,8 +3,8 @@ package com.xdx97.framework.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.xdx97.framework.common.AjaxResult;
 import com.xdx97.framework.common.MyCommonService;
-import com.xdx97.framework.entitys.dto.authority.AuthorityDto;
-import com.xdx97.framework.entitys.dto.authority.AuthorityResult;
+import com.xdx97.framework.entitys.vo.authority.AuthorityVo;
+import com.xdx97.framework.entitys.vo.authority.AuthorityResult;
 import com.xdx97.framework.entitys.pojo.authority.Authority;
 import com.xdx97.framework.entitys.pojo.authority.Menu;
 import com.xdx97.framework.entitys.pojo.authority.Role;
@@ -142,11 +142,11 @@ public class AuthorityServiceImpl extends MyCommonService
     /******************************  权限  ******************************/
 
     @Override
-    public AjaxResult<List<AuthorityDto>> authorityList() {
-        List<AuthorityDto> lists = new ArrayList<>();
+    public AjaxResult<List<AuthorityVo>> authorityList() {
+        List<AuthorityVo> lists = new ArrayList<>();
         List<Menu> menus = menuMapper.getOneMenu();
         for (Menu item : menus){
-            AuthorityDto dto = new AuthorityDto().setGroupName(item.getMenuName());
+            AuthorityVo dto = new AuthorityVo().setGroupName(item.getMenuName());
             List<String> listMenu = menuMapper.getByIdName(item.getMenuId());
             // 没有子菜单
             if (listMenu == null || listMenu.size() <= 0){

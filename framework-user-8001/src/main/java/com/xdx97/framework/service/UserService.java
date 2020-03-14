@@ -1,8 +1,8 @@
 package com.xdx97.framework.service;
 
 import com.xdx97.framework.common.AjaxResult;
-import com.xdx97.framework.entitys.dto.user.UserDto;
 import com.xdx97.framework.entitys.pojo.user.User;
+import com.xdx97.framework.entitys.vo.user.UserVo;
 
 import java.util.List;
 
@@ -39,5 +39,5 @@ public interface UserService {
      * userDto 列表
      * @return
      */
-    AjaxResult<List<UserDto>> userDtoList();
+    AjaxResult<List<UserVo>> userDtoList();
 }
