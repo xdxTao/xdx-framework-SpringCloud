@@ -28,7 +28,7 @@
         <log4j.version>1.2.17</log4j.version>
         <lombok.version>1.18.2</lombok.version>
         <druid.version>1.1.10</druid.version>
-        <mysql.connector.version>5.1.45</mysql.connector.version>
+        <mysql.connector.version>8.0.16</mysql.connector.version>
         <jackson.version>2.10.1</jackson.version>
         <fastjson.version>1.2.48</fastjson.version>
         <security.version>2.0.0.RELEASE</security.version>
