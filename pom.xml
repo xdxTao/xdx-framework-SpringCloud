@@ -29,7 +29,7 @@
         <lombok.version>1.18.2</lombok.version>
         <druid.version>1.1.10</druid.version>
         <mysql.connector.version>5.1.45</mysql.connector.version>
-        <jackson.version>2.10.1</jackson.version>
+        <jackson.version>2.13.0</jackson.version>
         <fastjson.version>1.2.48</fastjson.version>
         <security.version>2.0.0.RELEASE</security.version>
         <dataRedis.version>2.2.0.RELEASE</dataRedis.version>
